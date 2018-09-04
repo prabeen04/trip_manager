@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/fancy_fab.dart';
 
 class FeedScreen extends StatelessWidget {
   @override
@@ -9,6 +10,9 @@ class FeedScreen extends StatelessWidget {
       body: Center(
         child: Text('Feed Screen'),
       ),
+      floatingActionButton:
+            FancyFab() // This trailing comma makes auto-formatting nicer for build methods.
+        )
       )
     );
   }
