@@ -5,7 +5,7 @@ class StatsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBar(title: Text('Stats'),),
+        // appBar: AppBar(title: Text('Stats'),),
       body: Center(
         child: Text('Stats Screen'),
       ),

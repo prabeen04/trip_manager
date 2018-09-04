@@ -5,7 +5,7 @@ class MembersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBar(title: Text('Members'),),
+        // appBar: AppBar(title: Text('Members'),),
       body: Center(
         child: Text('Members Screen'),
       ),

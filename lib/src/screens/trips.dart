@@ -5,7 +5,7 @@ class TripsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBar(title: Text('Trips'),),
+        // appBar: AppBar(title: Text('Trips'),),
       body: Center(
         child: Text('Trips Screen'),
       ),

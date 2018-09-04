@@ -33,56 +33,90 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: Drawer(
-      //   child: ListView(
-      //     // Important: Remove any padding from the ListView.
-      //     padding: EdgeInsets.zero,
-      //     children: <Widget>[
-      //       UserAccountsDrawerHeader(
-      //           currentAccountPicture: new CircleAvatar(
-      //             backgroundImage: new NetworkImage('https://i.ytimg.com/vi/xwa1cBWWCVY/hqdefault.jpg'),
-      //           ),
-      //           accountName: Text(
-      //             "Prabeen",
-      //             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-      //           ),
-      //           accountEmail: Text(
-      //             "prabeen.strange@gmail.com",
-      //             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-      //           )),
-      //       ListTile(
-      //         title: Text('Profile'),
-      //         trailing: Icon(Icons.person),
-      //         onTap: () {
-      //           // Update the state of the app
-      //           // ...
-      //           // Then close the drawer
-      //           Navigator.pop(context);
-      //           Navigator.of(context).push(MaterialPageRoute(
-      //               builder: (BuildContext context) => ProfileScreen()));
-      //         },
-      //       ),
-      //       ListTile(
-      //         title: Text('News'),
-      //         trailing: Icon(Icons.explore),
-      //         onTap: () {
-      //           Navigator.pop(context);
-      //           Navigator.of(context).push(MaterialPageRoute(
-      //               builder: (BuildContext context) => NewsScreen()));
-      //         },
-      //       ),
-      //       ListTile(
-      //         title: Text('Form'),
-      //         trailing: Icon(Icons.edit),
-      //         onTap: () {
-      //           Navigator.pop(context);
-      //           Navigator.of(context).push(MaterialPageRoute(
-      //               builder: (BuildContext context) => FormScreen()));
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
+      appBar: AppBar(
+          title: Text('Home'),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(
+                Icons.notifications,
+                color: Colors.black38,
+              ),
+              tooltip: 'Notifications',
+              onPressed: () {
+                print('Notification Icon Pressed');
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => StatsScreen()));
+              },
+            ),
+            new IconButton(
+              icon: new Icon(
+                Icons.settings,
+                color: Colors.black38,
+              ),
+              tooltip: 'Settings',
+              onPressed: () {
+                print('Settings Icon Pressed');
+              },
+            ),
+            new IconButton(
+              icon: new Icon(
+                Icons.account_circle,
+                color: Colors.black38,
+              ),
+              tooltip: 'Profile',
+              onPressed: () {
+                print('Settings Icon Pressed');
+              },
+            ),
+          ],
+        ),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+                currentAccountPicture: new CircleAvatar(
+                  backgroundImage: new NetworkImage('https://i.ytimg.com/vi/xwa1cBWWCVY/hqdefault.jpg'),
+                ),
+                accountName: Text(
+                  "Prabeen",
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                ),
+                accountEmail: Text(
+                  "prabeen.strange@gmail.com",
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                )),
+            ListTile(
+              title: Text('TRIPS'),
+              trailing: Icon(Icons.train),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => TripsScreen()));
+              },
+            ),
+            ListTile(
+              title: Text('STATS'),
+              trailing: Icon(Icons.show_chart),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => StatsScreen()));
+              },
+            ),
+            ListTile(
+              title: Text('MEMBERS'),
+              trailing: Icon(Icons.group),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => MembersScreen()));
+              },
+            ),
+          ],
+        ),
+      ),
       body: _children[_currentIndex], // new
       // Bottom Navigator Starts here!!
 
@@ -96,7 +130,7 @@ class _HomePageState extends State<HomePage> {
             title: Text('FEEDS'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.trip_origin),
+            icon: Icon(Icons.train),
             title: Text('TRIPS'),
           ),
           BottomNavigationBarItem(
