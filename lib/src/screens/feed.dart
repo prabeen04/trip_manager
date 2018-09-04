@@ -5,9 +5,9 @@ class FeedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBar(title: Text('Notifications'),),
+        appBar: AppBar(title: Text('Feed'),),
       body: Center(
-        child: Text('Notification Screen'),
+        child: Text('Feed Screen'),
       ),
       )
     );
