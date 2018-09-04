@@ -1,7 +1,8 @@
 class Trip {
   String name;
-  DateTime dob;
-  String phone = '';
-  String email = '';
-  String favoriteColor = '';
+  DateTime startDate;
+  DateTime endDate;
+  String location = '';
+  String budget = '';
+  String members = '';
 }
