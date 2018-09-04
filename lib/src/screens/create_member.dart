@@ -51,7 +51,7 @@ class _CreateMemberState extends State<CreateMember> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(title: Text('Form')),
+      appBar: AppBar(title: Text('Create Member')),
       body: SafeArea(
           top: false,
           bottom: false,

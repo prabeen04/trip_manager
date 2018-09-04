@@ -95,7 +95,7 @@ class _CreateTripState extends State<CreateTrip> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(title: Text('Form')),
+      appBar: AppBar(title: Text('Create Trip')),
       body: SafeArea(
           top: false,
           bottom: false,
