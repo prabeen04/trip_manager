@@ -6,7 +6,6 @@ import './src/screens/members.dart';
 import './src/screens/stats.dart';
 import './src/screens/settings.dart';
 
-import './src/screens/create_trip.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);

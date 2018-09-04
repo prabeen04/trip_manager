@@ -11,7 +11,7 @@ class CreateTrip extends StatefulWidget {
 
 class _CreateTripState extends State<CreateTrip> {
   String _member = '';
-  List<String> _members = <String>['Paul Pogba', 'Romelu Lukaku', 'Marcus Rashford', 'Anthony Martial', 'Jesse Lingard'];
+  List<String> _members = <String>['','Paul Pogba', 'Romelu Lukaku', 'Marcus Rashford', 'Anthony Martial', 'Jesse Lingard'];
   Trip newTrip = new Trip();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -72,7 +72,7 @@ class _CreateTripState extends State<CreateTrip> {
       form.save(); //This invokes each onSaved event
 
       print('Form save called, newTrip is now up to date...');
-      print('Email: ${newTrip.name}');
+      print('Name: ${newTrip.name}');
       print('Start Date: ${newTrip.startDate}');
       print('End Date: ${newTrip.endDate}');
       print('Location: ${newTrip.location}');
