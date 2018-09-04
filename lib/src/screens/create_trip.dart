@@ -10,11 +10,11 @@ class CreateTrip extends StatefulWidget {
 }
 
 class _CreateTripState extends State<CreateTrip> {
-  String _color = '';
-  List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
+  String _member = '';
+  List<String> _members = <String>['Paul Pogba', 'Romelu Lukaku', 'Marcus Rashford', 'Anthony Martial', 'Jesse Lingard'];
   Trip newTrip = new Trip();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
 
   Future _chooseDate(BuildContext context, String initialDateString) async {
@@ -73,10 +73,11 @@ class _CreateTripState extends State<CreateTrip> {
 
       print('Form save called, newTrip is now up to date...');
       print('Email: ${newTrip.name}');
-      print('Dob: ${newTrip.dob}');
-      print('Phone: ${newTrip.phone}');
-      print('Email: ${newTrip.email}');
-      print('Favorite Color: ${newTrip.favoriteColor}');
+      print('Start Date: ${newTrip.startDate}');
+      print('End Date: ${newTrip.endDate}');
+      print('Location: ${newTrip.location}');
+      print('Budgets: ${newTrip.budget}');
+      print('Members: ${newTrip.members}');
       print('========================================');
       print('Submitting to back end...');
       // var TripService = new TripService();
@@ -116,10 +117,11 @@ class _CreateTripState extends State<CreateTrip> {
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.person),
-                      labelText: 'Name',
+                      labelText: 'Trip Name',
                     ),
                     // inputFormatters: [new LengthLimitingTextInputFormatter(30)],
-                    validator: (val) => val.isEmpty ? 'Name is required' : null,
+                    validator: (val) =>
+                        val.isEmpty ? 'Trip name is required' : null,
                     onSaved: (val) => newTrip.name = val,
                   ),
                   Row(children: <Widget>[
@@ -127,13 +129,34 @@ class _CreateTripState extends State<CreateTrip> {
                         child: new TextFormField(
                       decoration: new InputDecoration(
                         icon: const Icon(Icons.calendar_today),
-                        labelText: 'Date of Birth',
+                        labelText: 'Start Date',
                       ),
                       controller: _controller,
                       keyboardType: TextInputType.datetime,
                       validator: (val) =>
                           isValidDob(val) ? null : 'Not a valid date',
-                      onSaved: (val) => newTrip.dob = convertToDate(val),
+                      onSaved: (val) => newTrip.startDate = convertToDate(val),
+                    )),
+                    new IconButton(
+                      icon: new Icon(Icons.more_horiz),
+                      tooltip: 'Choose date',
+                      onPressed: (() {
+                        _chooseDate(context, _controller.text);
+                      }),
+                    )
+                  ]),
+                  Row(children: <Widget>[
+                    new Expanded(
+                        child: new TextFormField(
+                      decoration: new InputDecoration(
+                        icon: const Icon(Icons.calendar_today),
+                        labelText: 'End Date',
+                      ),
+                      controller: _controller,
+                      keyboardType: TextInputType.datetime,
+                      validator: (val) =>
+                          isValidDob(val) ? null : 'Not a valid date',
+                      onSaved: (val) => newTrip.endDate = convertToDate(val),
                     )),
                     new IconButton(
                       icon: new Icon(Icons.more_horiz),
@@ -145,42 +168,42 @@ class _CreateTripState extends State<CreateTrip> {
                   ]),
                   TextFormField(
                     decoration: const InputDecoration(
-                      icon: const Icon(Icons.phone),
-                      labelText: 'Phone',
+                      icon: const Icon(Icons.location_city),
+                      labelText: 'Location',
                     ),
-                    keyboardType: TextInputType.phone,
+                    keyboardType: TextInputType.text,
                     // inputFormatters: [new LengthLimitingTextInputFormatter(30)],
-                    validator: (val) => val.isEmpty ? 'Name is required' : null,
-                    onSaved: (val) => newTrip.phone = val,
+                    validator: (val) =>
+                        val.isEmpty ? 'Location is required' : null,
+                    onSaved: (val) => newTrip.location = val,
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      icon: const Icon(Icons.email),
-                      labelText: 'Email',
+                      icon: const Icon(Icons.money_off),
+                      labelText: 'Budget',
                     ),
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) => isValidEmail(value)
-                        ? null
-                        : 'Please enter a valid email address',
-                    onSaved: (val) => newTrip.email = val,
+                    keyboardType: TextInputType.number,
+                    validator: (val) =>
+                        val.isEmpty ? 'Budget is required' : null,
+                    onSaved: (val) => newTrip.budget = val,
                   ),
                   InputDecorator(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.color_lens),
-                      labelText: 'Color',
+                      labelText: 'Members',
                     ),
-                    isEmpty: _color == '',
+                    isEmpty: _member == '',
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
-                        value: _color,
+                        value: _member,
                         isDense: true,
                         onChanged: (String newValue) {
                           setState(() {
-                            newTrip.favoriteColor = newValue;
-                            _color = newValue;
+                            newTrip.members = newValue;
+                            _member = newValue;
                           });
                         },
-                        items: _colors.map((String value) {
+                        items: _members.map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -193,9 +216,12 @@ class _CreateTripState extends State<CreateTrip> {
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                       child: RaisedButton(
                         color: Colors.blueAccent,
-                        child: const Text('Submit', style: TextStyle(
-                          color: Colors.white,
-                        ),),
+                        child: const Text(
+                          'Create Trip',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         onPressed: _submitForm,
                       )),
                 ],
