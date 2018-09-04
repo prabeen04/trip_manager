@@ -6,6 +6,8 @@ import './src/screens/members.dart';
 import './src/screens/stats.dart';
 import './src/screens/settings.dart';
 
+import './src/screens/create_trip.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
 
@@ -134,11 +136,11 @@ class _HomePageState extends State<HomePage> {
             title: Text('TRIPS'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.group_work),
+            icon: Icon(Icons.group),
             title: Text('MEMBERS'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.table_chart),
+            icon: Icon(Icons.show_chart),
             title: Text('STATS'),
           ),
           BottomNavigationBarItem(

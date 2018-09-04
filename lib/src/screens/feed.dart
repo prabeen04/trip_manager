@@ -13,7 +13,6 @@ class FeedScreen extends StatelessWidget {
       floatingActionButton:
             FancyFab() // This trailing comma makes auto-formatting nicer for build methods.
         )
-      )
-    );
+      );
   }
 }
