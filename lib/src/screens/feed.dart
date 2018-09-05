@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import '../widgets/fancy_fab.dart';
 
-class FeedScreen extends StatelessWidget {
+class FeedScreen extends StatefulWidget {
+  @override
+  FeedScreenState createState() {
+    return new FeedScreenState();
+  }
+}
+
+class FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(

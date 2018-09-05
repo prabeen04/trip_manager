@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import './src/screens/feed.dart';
 import './src/screens/trips.dart';
 import './src/screens/members.dart';
