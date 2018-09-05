@@ -13,7 +13,26 @@ class FeedScreen extends StatefulWidget {
 }
 
 class FeedScreenState extends State<FeedScreen> {
-  final DocumentReference documentReference = Firestore.instance.collection('trips').document('trip1');
+  String myText;
+  StreamSubscription<DocumentSnapshot> subscription;
+
+  final DocumentReference documentReference =
+      Firestore.instance.document("myData/dummy");
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = new GoogleSignIn();
+
+  Future<FirebaseUser> _signIn() async {
+    GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+    GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
+
+    FirebaseUser user = await _auth.signInWithGoogle(
+        idToken: gSA.idToken, accessToken: gSA.accessToken);
+
+    print("User Name : ${user.displayName}");
+    return user;
+  }
+
 
   @override
   Widget build(BuildContext context) {
