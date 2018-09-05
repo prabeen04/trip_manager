@@ -100,67 +100,67 @@ class FeedScreenState extends State<FeedScreen> {
     return Container(
         child: Scaffold(
             // appBar: AppBar(title: Text('Feed'),),
-            body: new Padding(
+            body: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: new Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: () => _signIn()
                         .then((FirebaseUser user) => print(user))
                         .catchError((e) => print(e)),
-                    child: new Text("Sign In"),
+                    child: Text("Sign In"),
                     color: Colors.green,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: _signOut,
-                    child: new Text("Sign out"),
+                    child: Text("Sign out"),
                     color: Colors.red,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: _add,
-                    child: new Text("Add"),
+                    child: Text("Add"),
                     color: Colors.cyan,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: _update,
-                    child: new Text("Update"),
+                    child: Text("Update"),
                     color: Colors.lightBlue,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: _delete,
-                    child: new Text("Delete"),
+                    child: Text("Delete"),
                     color: Colors.orange,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
-                  new RaisedButton(
+                  RaisedButton(
                     onPressed: _fetch,
-                    child: new Text("Fetch"),
+                    child: Text("Fetch"),
                     color: Colors.lime,
                   ),
-                  new Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
                   myText == null
-                      ? new Container()
-                      : new Text(
+                      ? Container()
+                      : Text(
                           myText,
-                          style: new TextStyle(fontSize: 20.0),
+                          style: TextStyle(fontSize: 20.0),
                         )
                 ],
               ),
