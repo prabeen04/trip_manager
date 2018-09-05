@@ -16,7 +16,9 @@ class FeedScreenState extends State<FeedScreen> {
     void initState() {
       // TODO: implement initState
       super.initState();
-      print(documentReference);
+     documentReference.snapshots(DocumentSnapshot snapshot){
+       print(snapshot);
+     }
     }
   @override
   Widget build(BuildContext context) {
