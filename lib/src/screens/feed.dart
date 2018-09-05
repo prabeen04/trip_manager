@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../widgets/fancy_fab.dart';
 
 class FeedScreen extends StatefulWidget {
@@ -9,6 +10,7 @@ class FeedScreen extends StatefulWidget {
 }
 
 class FeedScreenState extends State<FeedScreen> {
+  final DocumentReference documentReference = Firestore.instance.collection('trips').document('trip1');
   @override
   Widget build(BuildContext context) {
     return Container(
