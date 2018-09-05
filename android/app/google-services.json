@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "804033019557",
-    "firebase_url": "https://trip-manager-9a5ef.firebaseio.com",
-    "project_id": "trip-manager-9a5ef",
-    "storage_bucket": "trip-manager-9a5ef.appspot.com"
+    "project_number": "546682656762",
+    "firebase_url": "https://trip-manager-ea0ba.firebaseio.com",
+    "project_id": "trip-manager-ea0ba",
+    "storage_bucket": "trip-manager-ea0ba.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:804033019557:android:46f62664dc39f3c4",
+        "mobilesdk_app_id": "1:546682656762:android:7362769d15ccca5d",
         "android_client_info": {
-          "package_name": "com.example.trip_manager"
+          "package_name": "com.example.tripmanager"
         }
       },
       "oauth_client": [
         {
-          "client_id": "804033019557-lsa4rf8km44r543p4t1ru5l7nf43p6ui.apps.googleusercontent.com",
+          "client_id": "546682656762-nk4pq8b90t3qvgmgk6u64fcn3clglup4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.trip_manager",
+            "package_name": "com.example.tripmanager",
             "certificate_hash": "39e968bd4c7191ef2ce924efb4ea809256e93ffe"
           }
         },
         {
-          "client_id": "804033019557-9l2lv9mf6cl490g49rre8agnudahh7rf.apps.googleusercontent.com",
+          "client_id": "546682656762-83jka8mmr3rgqbll11jgebl9np7grguv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDc3WgLWZrCuncT7oe8PgFLWiRXMWbFmVg"
+          "current_key": "AIzaSyANmAvvsOK69_I8YMdBY-66nLxurQmKHkY"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "804033019557-9l2lv9mf6cl490g49rre8agnudahh7rf.apps.googleusercontent.com",
+              "client_id": "546682656762-83jka8mmr3rgqbll11jgebl9np7grguv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
