@@ -11,6 +11,13 @@ class FeedScreen extends StatefulWidget {
 
 class FeedScreenState extends State<FeedScreen> {
   final DocumentReference documentReference = Firestore.instance.collection('trips').document('trip1');
+
+  @override
+    void initState() {
+      // TODO: implement initState
+      super.initState();
+      print(documentReference);
+    }
   @override
   Widget build(BuildContext context) {
     return Container(
