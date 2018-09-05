@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../widgets/fancy_fab.dart';
@@ -12,14 +13,6 @@ class FeedScreen extends StatefulWidget {
 class FeedScreenState extends State<FeedScreen> {
   final DocumentReference documentReference = Firestore.instance.collection('trips').document('trip1');
 
-  @override
-    void initState() {
-      // TODO: implement initState
-      super.initState();
-     documentReference.snapshots(DocumentSnapshot snapshot){
-       print(snapshot);
-     }
-    }
   @override
   Widget build(BuildContext context) {
     return Container(
