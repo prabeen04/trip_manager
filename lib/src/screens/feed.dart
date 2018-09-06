@@ -48,16 +48,6 @@ class FeedScreenState extends State<FeedScreen> {
     }).catchError((e) => print(e));
   }
 
-  void _update() {
-    Map<String, String> data = <String, String>{
-      "name": "Pawan Kumar Updated",
-      "desc": "Flutter Developer Updated"
-    };
-    documentReference.updateData(data).whenComplete(() {
-      print("Document Updated");
-    }).catchError((e) => print(e));
-  }
-
   void _fetch() {
     documentReference.get().then((datasnapshot) {
       if (datasnapshot.exists) {
