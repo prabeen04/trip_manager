@@ -48,13 +48,6 @@ class FeedScreenState extends State<FeedScreen> {
     }).catchError((e) => print(e));
   }
 
-  void _delete() {
-    documentReference.delete().whenComplete(() {
-      print("Deleted Successfully");
-      setState(() {});
-    }).catchError((e) => print(e));
-  }
-
   void _update() {
     Map<String, String> data = <String, String>{
       "name": "Pawan Kumar Updated",
