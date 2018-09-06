@@ -141,14 +141,6 @@ class FeedScreenState extends State<FeedScreen> {
                     padding: const EdgeInsets.all(10.0),
                   ),
                   RaisedButton(
-                    onPressed: _delete,
-                    child: Text("Delete"),
-                    color: Colors.orange,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                  ),
-                  RaisedButton(
                     onPressed: _fetch,
                     child: Text("Fetch"),
                     color: Colors.lime,
