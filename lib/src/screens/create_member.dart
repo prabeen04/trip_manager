@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '..//utils/phone_contact.dart';
 import '../models/member.dart';
 
 class CreateMember extends StatefulWidget {
@@ -52,6 +53,7 @@ class _CreateMemberState extends State<CreateMember> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(title: Text('Create Member')),
+      floatingActionButton: PhoneContact(),
       body: SafeArea(
           top: false,
           bottom: false,
