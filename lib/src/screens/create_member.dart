@@ -53,7 +53,15 @@ class _CreateMemberState extends State<CreateMember> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(title: Text('Create Member')),
-      floatingActionButton: PhoneContact(),
+      floatingActionButton: FloatingActionButton(
+          elevation: 0.0,
+          child: new Icon(Icons.contacts),
+          // backgroundColor: new Color(0xFFE57373),
+          onPressed: () {
+            print(' Fetching contact...');
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => PhoneContact()));
+          }),
       body: SafeArea(
           top: false,
           bottom: false,
