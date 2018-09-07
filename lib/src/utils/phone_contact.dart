@@ -11,7 +11,18 @@ class PhoneContact extends StatefulWidget {
 class _PhoneContactState extends State<PhoneContact> {
   Permission permission;
   Iterable<Contact> _contacts;
-  
+  @override
+  initState() {
+    super.initState();
+    checkPermission();
+  }
+
+  requestPermission() async {
+    bool res =
+        await SimplePermissions.requestPermission(Permission.ReadContacts);
+    print("permission request result is " + res.toString());
+    checkPermission();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
