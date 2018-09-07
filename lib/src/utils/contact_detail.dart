@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ContactDetail extends StatefulWidget {
-  @override
-  _ContactDetailState createState() => _ContactDetailState();
-}
-
-class _ContactDetailState extends State<ContactDetail> {
+class ContactDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
