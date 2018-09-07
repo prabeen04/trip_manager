@@ -37,6 +37,20 @@ class _PhoneContactState extends State<PhoneContact> {
     }
   }
 
+  getPermissionStatus() async {
+    final res =
+        await SimplePermissions.getPermissionStatus(Permission.ReadContacts);
+    print("permission status is " + res.toString());
+  }
+
+  refreshContacts() async {
+    var contacts = await ContactsService.getContacts();
+    print(contacts);
+    setState(() {
+      _contacts = contacts;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container();
