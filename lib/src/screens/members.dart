@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import './create_member.dart';
 
-class MembersScreen extends StatelessWidget {
+class MembersScreen extends StatefulWidget {
+  @override
+  MembersScreenState createState() {
+    return new MembersScreenState();
+  }
+}
+
+class MembersScreenState extends State<MembersScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
