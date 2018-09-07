@@ -23,10 +23,22 @@ class _PhoneContactState extends State<PhoneContact> {
     print("permission request result is " + res.toString());
     checkPermission();
   }
+
+  checkPermission() async {
+    print('Inside checkPermission()');
+    bool res = await SimplePermissions.checkPermission(Permission.ReadContacts);
+    print(res);
+    if (res == true) {
+      debugPrint('Permission granted');
+      refreshContacts();
+    } else {
+      debugPrint('No Permission');
+      requestPermission();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
