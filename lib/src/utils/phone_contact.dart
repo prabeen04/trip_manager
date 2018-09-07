@@ -70,20 +70,12 @@ class _PhoneContactState extends State<PhoneContact> {
                           builder: (BuildContext context) =>
                               ContactDetail(c)));
                     },
-                      leading: Checkbox(
-                        value: true,
-                        onChanged: null,
-                      ),
-                      // (c.avatar != null && c.avatar.length > 0)
-                              // ? Checkbox(
-                                
-                              // )
-                              // :Checkbox(),
-                          // ? CircleAvatar(backgroundImage: MemoryImage(c.avatar))
-                          // : CircleAvatar(
-                          //     child: Text(c.displayName.length > 1
-                          //         ? c.displayName?.substring(0, 2)
-                          //         : "")),
+                      leading: (c.avatar != null && c.avatar.length > 0)
+                          ? CircleAvatar(backgroundImage: MemoryImage(c.avatar))
+                          : CircleAvatar(
+                              child: Text(c.displayName.length > 1
+                                  ? c.displayName?.substring(0, 2)
+                                  : "")),
                       title: Text(c.displayName ?? ""),
                     );
                   },
