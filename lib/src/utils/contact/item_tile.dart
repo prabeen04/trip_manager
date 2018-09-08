@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ItemsTile extends StatelessWidget {
   ItemsTile(this._title, this._items);
-  final Iterable<Item> _items;
+  final Iterable _items;
   final String _title;
 
   @override

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AddressesTile extends StatelessWidget {
   AddressesTile(this._addresses);
-  final Iterable<PostalAddress> _addresses;
+  final Iterable _addresses;
 
   Widget build(BuildContext context) {
     return Column(
