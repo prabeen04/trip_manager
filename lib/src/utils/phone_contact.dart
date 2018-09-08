@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:contacts_service/contacts_service.dart';
 import 'package:simple_permissions/simple_permissions.dart';
 import './contact_detail.dart';
+import './create_contact.dart';
 
 class PhoneContact extends StatefulWidget {
   @override
@@ -59,28 +60,37 @@ class _PhoneContactState extends State<PhoneContact> {
         title: Text('Choose Contact'),
       ),
       body: SafeArea(
-          child: _contacts != null
-              ? ListView.builder(
-                  itemCount: _contacts?.length ?? 0,
-                  itemBuilder: (BuildContext context, int index) {
-                    Contact c = _contacts?.elementAt(index);
-                    return ListTile(
-                      onTap: () {
+        child: _contacts != null
+            ? ListView.builder(
+                itemCount: _contacts?.length ?? 0,
+                itemBuilder: (BuildContext context, int index) {
+                  Contact c = _contacts?.elementAt(index);
+                  return ListTile(
+                    onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              ContactDetail(c)));
+                          builder: (BuildContext context) => ContactDetail(c)));
                     },
-                      leading: (c.avatar != null && c.avatar.length > 0)
-                          ? CircleAvatar(backgroundImage: MemoryImage(c.avatar))
-                          : CircleAvatar(
-                              child: Text(c.displayName.length > 1
-                                  ? c.displayName?.substring(0, 2)
-                                  : "")),
-                      title: Text(c.displayName ?? ""),
-                    );
-                  },
-                )
-              : Center(child: CircularProgressIndicator())),
+                    leading: (c.avatar != null && c.avatar.length > 0)
+                        ? CircleAvatar(backgroundImage: MemoryImage(c.avatar))
+                        : CircleAvatar(
+                            child: Text(c.displayName.length > 1
+                                ? c.displayName?.substring(0, 2)
+                                : "")),
+                    title: Text(c.displayName ?? ""),
+                  );
+                },
+              )
+            : Center(child: CircularProgressIndicator()),
+      ),
+      floatingActionButton: FloatingActionButton(
+            elevation: 0.0,
+            child: new Icon(Icons.add),
+            // backgroundColor: new Color(0xFFE57373),
+            onPressed: () {
+              print(' Add Member button');
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => CreateContact()));
+            }),
     );
   }
 }
