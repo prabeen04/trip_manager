@@ -13,6 +13,7 @@ class PhoneContact extends StatefulWidget {
 class _PhoneContactState extends State<PhoneContact> {
   Permission permission;
   Iterable<Contact> _contacts;
+  bool checked;
   @override
   initState() {
     super.initState();
@@ -78,11 +79,19 @@ class _PhoneContactState extends State<PhoneContact> {
                                 : "")),
                     title: Text(c.displayName ?? ""),
                     trailing: Checkbox(
-                      value: true,
-                      onChanged: (bool value) {
-                        print('checkbox  $value');
-                      },
-                    ),
+                        value: true,
+                        onChanged: (bool value) {
+                          print('checkbox  $value');
+                          if (value == true) {
+                            setState(() {
+                              checked = false;
+                            });
+                          } else {
+                            setState(() {
+                              checked = true;
+                            });
+                          }
+                        }),
                   );
                 },
               )
