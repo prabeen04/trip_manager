@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '..//utils/phone_contact.dart';
+import '../utils/contact/phone_contact.dart';
 import '../models/member.dart';
 
 class CreateMember extends StatefulWidget {
