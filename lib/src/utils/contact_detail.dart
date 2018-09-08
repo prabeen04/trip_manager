@@ -38,8 +38,8 @@ class ContactDetail extends StatelessWidget {
               ListTile(
                   title: Text("Job"), trailing: Text(_contact.jobTitle ?? "")),
               // AddressesTile(_contact.postalAddresses),
-              // ItemsTile("Phones", _contact.phones),
-              // ItemsTile("Emails", _contact.emails)
+              ItemsTile("Phones", _contact.phones),
+              ItemsTile("Emails", _contact.emails)
             ],
           ),
         ));
