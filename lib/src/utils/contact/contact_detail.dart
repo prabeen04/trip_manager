@@ -1,6 +1,7 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import './address_tile.dart';
+import './item_tile.dart';
 
 class ContactDetail extends StatelessWidget {
   ContactDetail(this._contact);
@@ -48,26 +49,3 @@ class ContactDetail extends StatelessWidget {
 }
 
 
-
-class ItemsTile extends StatelessWidget {
-  ItemsTile(this._title, this._items);
-  final Iterable<Item> _items;
-  final String _title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ListTile(title: Text(_title)),
-          Column(
-              children: _items
-                  .map((i) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: ListTile(
-                          title: Text(i.label ?? ""),
-                          trailing: Text(i.value ?? ""))))
-                  .toList())
-        ]);
-  }
-}
