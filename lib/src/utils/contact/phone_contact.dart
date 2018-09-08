@@ -77,20 +77,26 @@ class _PhoneContactState extends State<PhoneContact> {
                                 ? c.displayName?.substring(0, 2)
                                 : "")),
                     title: Text(c.displayName ?? ""),
+                    trailing: Checkbox(
+                      value: true,
+                      onChanged: (bool value) {
+                        print('checkbox  $value');
+                      },
+                    ),
                   );
                 },
               )
             : Center(child: CircularProgressIndicator()),
       ),
       floatingActionButton: FloatingActionButton(
-            elevation: 0.0,
-            child: new Icon(Icons.add),
-            // backgroundColor: new Color(0xFFE57373),
-            onPressed: () {
-              print(' Add Member button');
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => CreateContact()));
-            }),
+          elevation: 0.0,
+          child: new Icon(Icons.add),
+          // backgroundColor: new Color(0xFFE57373),
+          onPressed: () {
+            print(' Add Member button');
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => CreateContact()));
+          }),
     );
   }
 }
