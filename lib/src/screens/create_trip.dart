@@ -81,13 +81,13 @@ class _CreateTripState extends State<CreateTrip> {
       print('Submitting to back end...');
       var tripService = TripService();
       tripService.addTrip(newTrip).then((value) =>
-          showMessage('New Trip created for $value'));
+          print('New Trip created for'));
     }
   }
 
   void showMessage(String message) {
     _scaffoldKey.currentState.showSnackBar(
-        new SnackBar(backgroundColor: Colors.red, content: new Text(message)));
+        new SnackBar(backgroundColor: Colors.red, content: new Text('Trip added')));
   }
 
   @override
