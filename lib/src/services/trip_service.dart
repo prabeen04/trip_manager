@@ -1,6 +1,7 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/trip.dart';
 
-Future<Trip> addTrip() async{
-
+Future addTrip(trip) async{
+  return await Firestore.instance.collection('trip').add(trip);
 }  
