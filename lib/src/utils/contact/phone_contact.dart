@@ -79,17 +79,8 @@ class _PhoneContactState extends State<PhoneContact> {
                                 ? c.displayName?.substring(0, 2)
                                 : "")),
                     title: Text(c.displayName ?? ""),
-                    trailing: Checkbox(
-                        value: checked,
-                        onChanged: (bool value) {
-                          if (value == true) {
-                          print('if  $value');
-                              checked = false;
-                          } else {
-                            print('else  $value');
-                              checked = true;
-                          }
-                        }),
+                    trailing:
+                        Checkbox(value: checked, onChanged: (bool value) {}),
                   );
                 },
               )
