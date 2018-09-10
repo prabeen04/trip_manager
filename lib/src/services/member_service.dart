@@ -3,12 +3,13 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/member.dart';
 
-class MemberService{
-  Future createMember(member) async{
-          String val = _toJson(member);
+class MemberService {
+  Future createMember(member) async {
+    String val = _toJson(member);
 
-    return await Firestore.instance.collection('members').add(val);    
+    return await Firestore.instance.collection('members').add(val);
   }
+
   String _toJson(Member member) {
     var mapData = new Map();
     mapData["name"] = member.name;
