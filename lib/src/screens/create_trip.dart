@@ -85,9 +85,9 @@ class _CreateTripState extends State<CreateTrip> {
     }
   }
 
-  void showMessage(String message, [MaterialColor color = Colors.red]) {
+  void showMessage(String message) {
     _scaffoldKey.currentState.showSnackBar(
-        new SnackBar(backgroundColor: color, content: new Text(message)));
+        new SnackBar(backgroundColor: Colors.red, content: new Text(message)));
   }
 
   @override
