@@ -80,7 +80,9 @@ class _PhoneContactState extends State<PhoneContact> {
                                 : "")),
                     title: Text(c.displayName ?? ""),
                     trailing:
-                        Checkbox(value: checked, onChanged: (bool value) {}),
+                        Checkbox(value: checked, onChanged: (bool value) {
+                          checked = value;
+                        }),
                   );
                 },
               )
