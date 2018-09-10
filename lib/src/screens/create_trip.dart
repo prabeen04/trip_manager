@@ -186,31 +186,31 @@ class _CreateTripState extends State<CreateTrip> {
                     //     val.isEmpty ? 'Budget is required' : null,
                     onSaved: (val) => newTrip.budget = val,
                   ),
-                  InputDecorator(
-                    decoration: const InputDecoration(
-                      icon: const Icon(Icons.color_lens),
-                      labelText: 'Members',
-                    ),
-                    isEmpty: _member == '',
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        value: _member,
-                        isDense: true,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            newTrip.members = newValue;
-                            _member = newValue;
-                          });
-                        },
-                        items: _members.map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
+                  // InputDecorator(
+                  //   decoration: const InputDecoration(
+                  //     icon: const Icon(Icons.color_lens),
+                  //     labelText: 'Members',
+                  //   ),
+                  //   isEmpty: _member == '',
+                  //   child: DropdownButtonHideUnderline(
+                  //     child: DropdownButton<String>(
+                  //       value: _member,
+                  //       isDense: true,
+                  //       onChanged: (String newValue) {
+                  //         setState(() {
+                  //           newTrip.members = newValue;
+                  //           _member = newValue;
+                  //         });
+                  //       },
+                  //       items: _members.map((String value) {
+                  //         return DropdownMenuItem<String>(
+                  //           value: value,
+                  //           child: Text(value),
+                  //         );
+                  //       }).toList(),
+                  //     ),
+                  //   ),
+                  // ),
                   Container(
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                       child: RaisedButton(
