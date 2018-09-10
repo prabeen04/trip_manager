@@ -13,7 +13,7 @@ class PhoneContact extends StatefulWidget {
 class _PhoneContactState extends State<PhoneContact> {
   Permission permission;
   Iterable<Contact> _contacts;
-  bool checked = false;
+
   @override
   initState() {
     super.initState();
@@ -65,6 +65,7 @@ class _PhoneContactState extends State<PhoneContact> {
             ? ListView.builder(
                 itemCount: _contacts?.length ?? 0,
                 itemBuilder: (BuildContext context, int index) {
+                  bool checked = false;
                   Contact c = _contacts?.elementAt(index);
                   return ListTile(
                     onTap: () {
@@ -83,14 +84,10 @@ class _PhoneContactState extends State<PhoneContact> {
                         onChanged: (bool value) {
                           if (value == true) {
                           print('if  $value');
-                            setState(() {
                               checked = false;
-                            });
                           } else {
                             print('else  $value');
-                            setState(() {
                               checked = true;
-                            });
                           }
                         }),
                   );
