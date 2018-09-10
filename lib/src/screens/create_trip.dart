@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
 import '../models/trip.dart';
-// import '../services/Trip_service.dart';
+import '../services/trip_service.dart';
 
 class CreateTrip extends StatefulWidget {
   @override
@@ -81,8 +81,8 @@ class _CreateTripState extends State<CreateTrip> {
       print('========================================');
       print('Submitting to back end...');
       // var TripService = new TripService();
-      // TripService.createTrip(newTrip).then((value) =>
-      //     showMessage('New Trip created for ${value.name}!', Colors.blue));
+      addTrip(newTrip).then((value) =>
+          showMessage('New Trip created for ${value.name}!', Colors.blue));
     }
   }
 
@@ -183,8 +183,8 @@ class _CreateTripState extends State<CreateTrip> {
                       labelText: 'Budget',
                     ),
                     keyboardType: TextInputType.number,
-                    validator: (val) =>
-                        val.isEmpty ? 'Budget is required' : null,
+                    // validator: (val) =>
+                    //     val.isEmpty ? 'Budget is required' : null,
                     onSaved: (val) => newTrip.budget = val,
                   ),
                   InputDecorator(
