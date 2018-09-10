@@ -3,14 +3,12 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 import '../models/trip.dart';
 import '../services/trip_service.dart';
-
 class CreateTrip extends StatefulWidget {
   @override
   _CreateTripState createState() => _CreateTripState();
 }
 
 class _CreateTripState extends State<CreateTrip> {
-  var TripService = new TripService();
   String _member = '';
   List<String> _members = <String>['','Paul Pogba', 'Romelu Lukaku', 'Marcus Rashford', 'Anthony Martial', 'Jesse Lingard'];
   Trip newTrip = new Trip();
@@ -81,8 +79,9 @@ class _CreateTripState extends State<CreateTrip> {
       print('Members: ${newTrip.members}');
       print('========================================');
       print('Submitting to back end...');
-      addTrip(newTrip).then((value) =>
-          showMessage('New Trip created for ${value.name}!', Colors.blue));
+      var tripService = TripService();
+      tripService.addTrip(newTrip).then((value) =>
+          showMessage('New Trip created for $value'));
     }
   }
 
