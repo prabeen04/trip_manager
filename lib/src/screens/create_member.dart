@@ -40,7 +40,7 @@ class _CreateMemberState extends State<CreateMember> {
       print('Submitting to back end...');
       var memberService = new MemberService();
       memberService.createMember(newMember).then((value) =>
-          showMessage('New Member created for ${value.name}!', Colors.blue));
+          showMessage('New Member created for ${value}!', Colors.blue));
     }
   }
 

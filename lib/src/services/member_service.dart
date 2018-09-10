@@ -7,7 +7,7 @@ class MemberService {
   Future<DocumentReference> createMember(member) async {
     String val = _toJson(member);
 
-    return await Firestore.instance.collection('members').add(val);
+    return await Firestore.instance.collection('members').add(member);
   }
 Member _fromJson(String jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);
