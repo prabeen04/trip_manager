@@ -10,6 +10,7 @@ class CreateTrip extends StatefulWidget {
 }
 
 class _CreateTripState extends State<CreateTrip> {
+  var TripService = new TripService();
   String _member = '';
   List<String> _members = <String>['','Paul Pogba', 'Romelu Lukaku', 'Marcus Rashford', 'Anthony Martial', 'Jesse Lingard'];
   Trip newTrip = new Trip();
@@ -80,7 +81,6 @@ class _CreateTripState extends State<CreateTrip> {
       print('Members: ${newTrip.members}');
       print('========================================');
       print('Submitting to back end...');
-      // var TripService = new TripService();
       addTrip(newTrip).then((value) =>
           showMessage('New Trip created for ${value.name}!', Colors.blue));
     }
