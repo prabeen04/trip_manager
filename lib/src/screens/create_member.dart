@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/contact/phone_contact.dart';
 import '../models/member.dart';
+import '../services/member_service.dart';
 
 class CreateMember extends StatefulWidget {
   @override
@@ -37,9 +38,9 @@ class _CreateMemberState extends State<CreateMember> {
       print('Email: ${newMember.email}');
       print('========================================');
       print('Submitting to back end...');
-      // var MemberService = new MemberService();
-      // MemberService.createMember(newMember).then((value) =>
-      //     showMessage('New Member created for ${value.name}!', Colors.blue));
+      var memberService = new MemberService();
+      memberService.createMember(newMember).then((value) =>
+          showMessage('New Member created for ${value.name}!', Colors.blue));
     }
   }
 
