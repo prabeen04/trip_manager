@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import '../models/member.dart';
+final FirebaseDatabase database = FirebaseDatabase.instance;
 
 class MemberService {
-  Future<DocumentReference> createMember(member) async {
+  Future createMember(member) async {
     print( _toJson(member));
-    return await Firestore.instance.collection('members').add(member);
+    return await database.reference().child('member').set( _toJson(member));
   }
 
   Member _fromJson(String jsonData) {
