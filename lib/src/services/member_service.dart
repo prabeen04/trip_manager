@@ -8,7 +8,11 @@ final FirebaseDatabase database = FirebaseDatabase.instance;
 class MemberService {
   Future<dynamic> createMember(member) async {
     print( _toJson(member));
-    return await database.reference().child('member').set( _toJson(member));
+    return await database.reference().child('member').set( {
+      "name": "prabeen",
+      "phone": "9438718954",
+      "email": "prabeen.strange@gmail.com",
+    });
   }
 
   Member _fromJson(String jsonData) {
