@@ -5,9 +5,9 @@ import '../models/member.dart';
 
 class MemberService {
   Future<DocumentReference> createMember(member) async {
-    String val = _toJson(member);
+    Map<String, dynamic> val = _toJson(member);
 
-    return await Firestore.instance.collection('members').add(member);
+    return await Firestore.instance.collection('members').add(val);
   }
 Member _fromJson(String jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);
@@ -17,12 +17,12 @@ Member _fromJson(String jsonData) {
     member.email = map['email'];
     return member;
   }
-  String _toJson(Member member) {
+  Map<String, dynamic> _toJson(Member member) {
     var mapData = new Map();
     mapData["name"] = member.name;
     mapData["phone"] = member.phone;
     mapData["email"] = member.email;
-    String value = json.encode(mapData);
-    return value;
+    // String value = json.encode(mapData);
+    return mapData;
   }
 }
