@@ -4,7 +4,7 @@ import './src/screens/trips.dart';
 import './src/screens/members.dart';
 import './src/screens/stats.dart';
 import './src/screens/settings.dart';
-
+import './src/screens/user/user_screen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -66,6 +66,8 @@ class _HomePageState extends State<HomePage> {
               tooltip: 'Profile',
               onPressed: () {
                 print('Settings Icon Pressed');
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => UserScreen()));
               },
             ),
           ],
