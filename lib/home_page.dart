@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './src/screens/feed.dart';
 import './src/screens/trips.dart';
 import './src/screens/members.dart';
-import './src/screens/stats.dart';
+import './src/screens/stats/stats.dart';
 import './src/screens/settings.dart';
 import './src/screens/user/user_screen.dart';
 import './src/screens/todo/todo_screen.dart';
