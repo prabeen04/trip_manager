@@ -6,7 +6,7 @@ final FirebaseDatabase database = FirebaseDatabase.instance;
 
 class MemberService {
   Future<dynamic> createMember(member) async {
-    print( _fromJson(member));
+    print( _toJson(member));
     database.reference().child('member').set( {
       "name": "prabeen",
       "phone": "9438718954",
