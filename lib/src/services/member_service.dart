@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../models/member.dart';
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -8,7 +7,7 @@ final FirebaseDatabase database = FirebaseDatabase.instance;
 class MemberService {
   Future<dynamic> createMember(member) async {
     print( _toJson(member));
-    return await database.reference().child('member').set( {
+    database.reference().child('member').set( {
       "name": "prabeen",
       "phone": "9438718954",
       "email": "prabeen.strange@gmail.com",
