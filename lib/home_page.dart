@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             ),
             new IconButton(
               icon: new Icon(
-                Icons.settings,
+                Icons.today,
                 color: Colors.black38,
               ),
               tooltip: 'Settings',
