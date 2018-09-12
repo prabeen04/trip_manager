@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
+class User extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('setting screen')
+        child: Text('User screen')
       ) ,
       
     );
