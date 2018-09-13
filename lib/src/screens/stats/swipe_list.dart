@@ -14,6 +14,9 @@ class _SwipeListState extends State<SwipeList> {
       itemBuilder: (BuildContext context, int index) {
         return Dismissible(
           key: Key(list[index]),
+          background: Container(
+            color: Colors.redAccent,
+          ),
           onDismissed: (direction) {
             list.removeAt(index);
           },
