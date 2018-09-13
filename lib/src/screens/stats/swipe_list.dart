@@ -6,10 +6,13 @@ class SwipeList extends StatefulWidget {
 }
 
 class _SwipeListState extends State<SwipeList> {
+  List<String> list = new List.generate(30, (int index) => 'this is a list');
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('data'),
+      child: ListView.builder(
+        itemCount: list.length,
+      )
     );
   }
 }
