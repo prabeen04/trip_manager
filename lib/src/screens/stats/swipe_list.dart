@@ -20,7 +20,10 @@ class _SwipeListState extends State<SwipeList> {
           onDismissed: (direction) {
             list.removeAt(index);
           },
-          child: ListTile(title: Text(list[index])),
+          child: ListTile(
+            title: Text(list[index]),
+            trailing: Icon(Icons.arrow_forward_ios),
+            ),
         );
       },
     );
