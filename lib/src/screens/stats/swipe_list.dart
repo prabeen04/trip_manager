@@ -12,6 +12,11 @@ class _SwipeListState extends State<SwipeList> {
     return Container(
       child: ListView.builder(
         itemCount: list.length,
+        itemBuilder: (BuildContext context, int index){
+          return Dismissible(
+            child: ListTile(title: Text(list[index])),
+          );
+        },
       )
     );
   }
