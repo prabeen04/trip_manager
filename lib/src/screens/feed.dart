@@ -1,8 +1,8 @@
-import 'dart:async';
+// import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import '../widgets/fancy_fab.dart';
 
 class FeedScreen extends StatefulWidget {
@@ -13,70 +13,70 @@ class FeedScreen extends StatefulWidget {
 }
 
 class FeedScreenState extends State<FeedScreen> {
-  String myText;
-  StreamSubscription<DocumentSnapshot> subscription;
+  // String myText;
+  // StreamSubscription<DocumentSnapshot> subscription;
 
-  final DocumentReference documentReference =
-      Firestore.instance.document("myData/dummy");
+  // final DocumentReference documentReference =
+  //     Firestore.instance.document("myData/dummy");
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn googleSignIn = new GoogleSignIn();
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
+  // final GoogleSignIn googleSignIn = new GoogleSignIn();
 
-  Future<FirebaseUser> _signIn() async {
-    GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-    GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
+  // Future<FirebaseUser> _signIn() async {
+  //   GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+  //   GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
 
-    FirebaseUser user = await _auth.signInWithGoogle(
-        idToken: gSA.idToken, accessToken: gSA.accessToken);
+  //   FirebaseUser user = await _auth.signInWithGoogle(
+  //       idToken: gSA.idToken, accessToken: gSA.accessToken);
 
-    print("User Name : ${user.displayName}");
-    return user;
-  }
+  //   print("User Name : ${user.displayName}");
+  //   return user;
+  // }
 
-  void _signOut() {
-    googleSignIn.signOut();
-    print("User Signed out");
-  }
+  // void _signOut() {
+  //   googleSignIn.signOut();
+  //   print("User Signed out");
+  // }
 
-  void _add() {
-    Map<String, String> data = <String, String>{
-      "name": "Pawan Kumar",
-      "desc": "Flutter Developer"
-    };
-    documentReference.setData(data).whenComplete(() {
-      print("Document Added");
-    }).catchError((e) => print(e));
-  }
+  // void _add() {
+  //   Map<String, String> data = <String, String>{
+  //     "name": "Pawan Kumar",
+  //     "desc": "Flutter Developer"
+  //   };
+  //   documentReference.setData(data).whenComplete(() {
+  //     print("Document Added");
+  //   }).catchError((e) => print(e));
+  // }
 
-  void _fetch() {
-    documentReference.get().then((datasnapshot) {
-      if (datasnapshot.exists) {
-        setState(() {
-          myText = datasnapshot.data['desc'];
-        });
-      }
-    });
-  }
+  // void _fetch() {
+  //   documentReference.get().then((datasnapshot) {
+  //     if (datasnapshot.exists) {
+  //       setState(() {
+  //         myText = datasnapshot.data['desc'];
+  //       });
+  //     }
+  //   });
+  // }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    subscription = documentReference.snapshots().listen((datasnapshot) {
-      if (datasnapshot.exists) {
-        setState(() {
-          myText = datasnapshot.data['desc'];
-        });
-      }
-    });
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   subscription = documentReference.snapshots().listen((datasnapshot) {
+  //     if (datasnapshot.exists) {
+  //       setState(() {
+  //         myText = datasnapshot.data['desc'];
+  //       });
+  //     }
+  //   });
+  // }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    subscription?.cancel();
-  }
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   subscription?.cancel();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -120,15 +120,15 @@ class FeedScreenState extends State<FeedScreen> {
                   //   child: Text("Fetch"),
                   //   color: Colors.lime,
                   // ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                  ),
-                  myText == null
-                      ? Container()
-                      : Text(
-                          myText,
-                          style: TextStyle(fontSize: 20.0),
-                        )
+                  // Padding(
+                  //   padding: const EdgeInsets.all(10.0),
+                  // ),
+                  // myText == null
+                  //     ? Container()
+                  //     : Text(
+                  //         myText,
+                  //         style: TextStyle(fontSize: 20.0),
+                  //       )
                 ],
               ),
             ),
