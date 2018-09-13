@@ -89,37 +89,37 @@ class FeedScreenState extends State<FeedScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  RaisedButton(
-                    onPressed: () => _signIn()
-                        .then((FirebaseUser user) => print(user))
-                        .catchError((e) => print(e)),
-                    child: Text("Sign In"),
-                    color: Colors.green,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                  ),
-                  RaisedButton(
-                    onPressed: _signOut,
-                    child: Text("Sign out"),
-                    color: Colors.red,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                  ),
-                  RaisedButton(
-                    onPressed: _add,
-                    child: Text("Add"),
-                    color: Colors.cyan,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                  ),
-                  RaisedButton(
-                    onPressed: _fetch,
-                    child: Text("Fetch"),
-                    color: Colors.lime,
-                  ),
+                  // RaisedButton(
+                  //   onPressed: () => _signIn()
+                  //       .then((FirebaseUser user) => print(user))
+                  //       .catchError((e) => print(e)),
+                  //   child: Text("Sign In"),
+                  //   color: Colors.green,
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(10.0),
+                  // ),
+                  // RaisedButton(
+                  //   onPressed: _signOut,
+                  //   child: Text("Sign out"),
+                  //   color: Colors.red,
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(10.0),
+                  // ),
+                  // RaisedButton(
+                  //   onPressed: _add,
+                  //   child: Text("Add"),
+                  //   color: Colors.cyan,
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(10.0),
+                  // ),
+                  // RaisedButton(
+                  //   onPressed: _fetch,
+                  //   child: Text("Fetch"),
+                  //   color: Colors.lime,
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                   ),
