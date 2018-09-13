@@ -10,13 +10,16 @@ class _SwipeListState extends State<SwipeList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: list.length,
-        itemBuilder: (BuildContext context, int index){
-          return Dismissible(
-            key: Key(list[index]),
-            child: ListTile(title: Text(list[index])),
-          );
-        },
-      );
+      itemCount: list.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Dismissible(
+          key: Key(list[index]),
+          onDismissed: (direction) {
+            list.removeAt(index);
+          },
+          child: ListTile(title: Text(list[index])),
+        );
+      },
+    );
   }
 }
