@@ -1,32 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
-// import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/firebase_database.dart';
 import '../models/member.dart';
 // final FirebaseDatabase database = FirebaseDatabase.instance;
 
 class MemberService {
   Future<dynamic> createMember(member) async {
-<<<<<<< HEAD
-<<<<<<< HEAD
     print( member);
     FirebaseDatabase.instance.reference().child('member').set( {
       "name": "prabeen",
       "phone": "9438718954",
       "email": "prabeen.strange@gmail.com",
     });
-=======
-=======
->>>>>>> parent of da60133... firebase database stuff
     print( _toJson(member));
     // database.reference().child('member').set( {
     //   "name": "prabeen",
     //   "phone": "9438718954",
     //   "email": "prabeen.strange@gmail.com",
     // });
-<<<<<<< HEAD
->>>>>>> parent of da60133... firebase database stuff
-=======
->>>>>>> parent of da60133... firebase database stuff
   }
 
   Member _fromJson(String jsonData) {
