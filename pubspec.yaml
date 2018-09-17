@@ -19,11 +19,11 @@ dependencies:
   simple_permissions: ^0.1.6
   validate: ^1.7.0
   intl: 0.15.7
-  # firebase_core:
-  # cloud_firestore:
-  # firebase_database:
-  # firebase_auth:
-  # google_sign_in: 
+  firebase_core:
+  cloud_firestore:
+  firebase_database:
+  firebase_auth:
+  google_sign_in: 
   charts_flutter: 0.4.0   
 
   # The following adds the Cupertino Icons font to your application.
