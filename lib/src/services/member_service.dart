@@ -6,13 +6,13 @@ import '../models/member.dart';
 
 class MemberService {
   Future<dynamic> createMember(member) async {
-    print( member);
-    FirebaseDatabase.instance.reference().child('member').set( {
+    print(member);
+    FirebaseDatabase.instance.reference().child('member').push().set({
       "name": "prabeen",
       "phone": "9438718954",
       "email": "prabeen.strange@gmail.com",
     });
-    print( _toJson(member));
+    print(_toJson(member));
     // database.reference().child('member').set( {
     //   "name": "prabeen",
     //   "phone": "9438718954",
