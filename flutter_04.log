@@ -1,0 +1,62 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build bundle --suppress-analytics --target E:\flutter-projects\trip_manager\lib/main.dart --preview-dart-2 --filesystem-scheme org-dartlang-root --depfile E:\flutter-projects\trip_manager\android\app\build\intermediates\flutter\debug/snapshot_blob.bin.d --asset-dir E:\flutter-projects\trip_manager\android\app\build\intermediates\flutter\debug/flutter_assets --debug
+
+## exception
+
+FileSystemException: FileSystemException: Cannot open file, path = 'build\app.dill' (OS Error: The system cannot find the file specified.
+, errno = 2)
+
+```
+#0      _File.open.<anonymous closure> (dart:io/file_impl.dart:368:9)
+#1      _rootRunUnary (dart:async/zone.dart:1132:38)
+#2      _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#3      _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#4      Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#5      Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#6      Future._completeWithValue (dart:async/future_impl.dart:486:5)
+#7      Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:516:7)
+#8      _rootRun (dart:async/zone.dart:1124:13)
+#9      _CustomZone.run (dart:async/zone.dart:1021:19)
+#10     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#11     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#12     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#13     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#14     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.7.3, on Microsoft Windows [Version 10.0.17134.228], locale en-US)
+    • Flutter version 0.7.3 at E:\flutter
+    • Framework revision 3b309bda07 (3 weeks ago), 2018-08-28 12:39:24 -0700
+    • Engine revision af42b6dc95
+    • Dart version 2.1.0-dev.1.0.flutter-ccb16f7282
+
+[✓] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at C:\Users\PRABEEN\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-27, build-tools 27.0.3
+    • ANDROID_HOME = C:\Users\PRABEEN\AppData\Local\Android\sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 27.1.1
+    • Dart plugin version 173.4700
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+
+[✓] VS Code, 64-bit edition (version 1.26.1)
+    • VS Code at C:\Program Files\Microsoft VS Code
+    • Flutter extension version 2.18.0
+
+[✓] Connected devices (1 available)
+    • Android SDK built for x86 • emulator-5554 • android-x86 • Android 7.1.1 (API 25) (emulator)
+
+• No issues found!
+```
