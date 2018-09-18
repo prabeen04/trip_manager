@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../models/trip.dart';
 
@@ -11,7 +10,6 @@ class TripService {
         .push()
         .child('trips')
         .set(_toJson(trip));
-    // return await Firestore.instance.collection('trips').add(trip);
   }
 
   Trip _fromJson(String jsonData) {
