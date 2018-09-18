@@ -1,15 +1,17 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../models/trip.dart';
 
 class TripService {
   Future addTrip(trip) async {
-    return FirebaseDatabase.instance
-        .reference()
-        .push()
-        .child('trips')
-        .set(_toJson(trip));
+    print(_toJson(trip));
+    // return FirebaseDatabase.instance
+    //     .reference()
+    //     .push()
+    //     .child('trips')
+    //     .set(_toJson(trip));
   }
 
   Trip _fromJson(String jsonData) {
@@ -26,9 +28,11 @@ class TripService {
 
   String _toJson(Trip trip) {
     var mapData = new Map();
+
+      // DateTime now = new DateTime.now();
     mapData["name"] = trip.name;
-    mapData["startDate"] = trip.startDate;
-    mapData["endDate"] = trip.endDate;
+    mapData["startDate"] = new DateFormat.yMd().format(trip.startDate);
+    mapData["endDate"] = new DateFormat.yMd().format(trip.endDate);
     mapData["location"] = trip.location;
     mapData["budget"] = trip.budget;
     mapData["members"] = trip.members;
