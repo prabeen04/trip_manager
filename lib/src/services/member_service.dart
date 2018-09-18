@@ -7,12 +7,19 @@ import '../models/member.dart';
 class MemberService {
   Future<dynamic> createMember(member) async {
     print(member);
-    FirebaseDatabase.instance.reference().child('member').push().set({
-      "name": "prabeen",
-      "phone": "9438718954",
-      "email": "prabeen.strange@gmail.com",
-    });
-    print(_toJson(member));
+    FirebaseDatabase.instance
+        .reference()
+        .child('member')
+        .push()
+        .set(_toJson(member));
+    // print('---------------------');
+    // print(_toJson(member));
+    // print('---------------------');
+    // print({
+    //   "name": "prabeen",
+    //   "phone": "9438718954",
+    //   "email": "prabeen.strange@gmail.com",
+    // });
     // database.reference().child('member').set( {
     //   "name": "prabeen",
     //   "phone": "9438718954",
@@ -29,12 +36,12 @@ class MemberService {
     return member;
   }
 
-  Map<String, dynamic> _toJson(Member member) {
+  String _toJson(Member member) {
     var mapData = new Map();
     mapData["name"] = member.name;
     mapData["phone"] = member.phone;
     mapData["email"] = member.email;
-     value = json.encode(mapData);
+    String value = json.encode(mapData);
     return value;
   }
 }
