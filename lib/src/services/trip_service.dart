@@ -18,8 +18,8 @@ class TripService {
     Map<String, dynamic> map = json.decode(jsonData);
     var trip = new Trip();
     trip.name = map['name'];
-    trip.startDate = map['startDate'];
-    trip.endDate = map['endDate'];
+    trip.startDate = new DateFormat.yMd().parseStrict(map['startDate']);
+    trip.endDate = new DateFormat.yMd().parseStrict(map['endDate']);
     trip.location = map['location'];
     trip.budget = map['budget'];
     trip.members = map['members'];

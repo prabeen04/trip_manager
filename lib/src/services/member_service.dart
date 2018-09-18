@@ -6,7 +6,7 @@ import '../models/member.dart';
 
 class MemberService {
   Future<dynamic> createMember(member) async {
-    print(member);
+    print(_toJson(member));
     FirebaseDatabase.instance
         .reference()
         .child('member')
