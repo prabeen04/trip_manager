@@ -13,7 +13,10 @@ class MemberService {
         .push()
         .set(_toJson(member));
   }
-
+Future<dynamic> fetchMembers() async {
+    var data = await FirebaseDatabase.instance.reference().child('member').once();
+    print(data);
+  }
   Member _fromJson(String jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);
     var member = new Member();

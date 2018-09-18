@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/trip_service.dart';
 import './create_trip.dart';
 
 class TripsScreen extends StatelessWidget {
