@@ -12,19 +12,6 @@ class MemberService {
         .child('member')
         .push()
         .set(_toJson(member));
-    // print('---------------------');
-    // print(_toJson(member));
-    // print('---------------------');
-    // print({
-    //   "name": "prabeen",
-    //   "phone": "9438718954",
-    //   "email": "prabeen.strange@gmail.com",
-    // });
-    // database.reference().child('member').set( {
-    //   "name": "prabeen",
-    //   "phone": "9438718954",
-    //   "email": "prabeen.strange@gmail.com",
-    // });
   }
 
   Member _fromJson(String jsonData) {
