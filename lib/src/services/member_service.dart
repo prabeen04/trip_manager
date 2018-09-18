@@ -20,27 +20,21 @@ class MemberService {
     // });
   }
 
-  // Member _fromJson(String jsonData) {
-  //   Map<String, dynamic> map = json.decode(jsonData);
-  //   var member = new Member();
-  //   // member.name = map['name'];
-  //   // member.phone = map['phone'];
-  //   // member.email = map['email'];
-  //    mapData["name"] = member.name;
-  //   mapData["phone"] = member.phone;
-  //   mapData["email"] = member.email;
-  //   return member;
-  // }
+  Member _fromJson(String jsonData) {
+    Map<String, dynamic> map = json.decode(jsonData);
+    var member = new Member();
+    member.name = map['name'];
+    member.phone = map['phone'];
+    member.email = map['email'];
+    return member;
+  }
 
   Map<String, dynamic> _toJson(Member member) {
     var mapData = new Map();
-    // mapData["name"] = member.name;
-    // mapData["phone"] = member.phone;
-    // mapData["email"] = member.email;
-    mapData['name'] = member.name;
-    mapData['phone'] = member.phone;
-    mapData['email'] = member.email;
-    Map<String, dynamic> value = json.encode(mapData);
+    mapData["name"] = member.name;
+    mapData["phone"] = member.phone;
+    mapData["email"] = member.email;
+     value = json.encode(mapData);
     return value;
   }
 }
