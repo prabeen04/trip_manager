@@ -11,6 +11,13 @@ class MembersScreen extends StatefulWidget {
 
 class MembersScreenState extends State<MembersScreen> {
   @override
+  void initState() {
+    var memberService = new MemberService();
+    memberService.fetchMembers();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
