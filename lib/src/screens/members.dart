@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/member_service.dart';
 import './create_member.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class MembersScreen extends StatefulWidget {
   @override
@@ -12,9 +13,15 @@ class MembersScreen extends StatefulWidget {
 class MembersScreenState extends State<MembersScreen> {
   @override
   void initState() {
-    var memberService = new MemberService();
-    memberService.fetchMembers();
+    fetchData();
     super.initState();
+  }
+
+  fetchData() async {
+    var memberService = new MemberService();
+    memberService.fetchMembers().whenComplete((snapshot){
+      print(snapshot);
+    });
   }
 
   @override
