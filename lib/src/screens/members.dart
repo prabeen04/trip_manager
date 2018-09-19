@@ -13,14 +13,14 @@ class MembersScreenState extends State<MembersScreen> {
   @override
   void initState() {
     fetchData();
+    print('inside fetchData');
     super.initState();
   }
 
-  fetchData() async {
+  fetchData() {
+    print('inside fetchData');
     var memberService = new MemberService();
-    memberService.fetchMembers().then((snapshot){
-      print(snapshot);
-    });
+    memberService.fetchMembers();
   }
 
   @override
