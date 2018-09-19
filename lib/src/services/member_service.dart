@@ -14,7 +14,9 @@ class MemberService {
         .set(_toJson(member));
   }
 Future<dynamic> fetchMembers() async {
-    return await FirebaseDatabase.instance.reference().child('member').once();
+    return await FirebaseDatabase.instance.reference().child('member').once().then((DataSnapshot snapshot) {
+      print('Connected to second database and read ${snapshot.value}');
+    });
   }
   Member _fromJson(String jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);

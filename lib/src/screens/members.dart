@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/member_service.dart';
 import './create_member.dart';
-import 'package:firebase_database/firebase_database.dart';
 
 class MembersScreen extends StatefulWidget {
   @override
