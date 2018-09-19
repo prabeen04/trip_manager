@@ -15,7 +15,7 @@ class MemberService {
   }
 Future<dynamic> fetchMembers() async {
       print('inside fetchMembers()');
-    return await FirebaseDatabase.instance.reference().child('member').once()
+    return await FirebaseDatabase.instance.reference().child('member').once();
   }
   Member _fromJson(String jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/member_service.dart';
 import './create_member.dart';
-
 class MembersScreen extends StatefulWidget {
   @override
   MembersScreenState createState() {
@@ -20,7 +19,9 @@ class MembersScreenState extends State<MembersScreen> {
   fetchData() {
     print('inside fetchData');
     var memberService = new MemberService();
-    memberService.fetchMembers();
+    memberService.fetchMembers().then((snapshot) {
+      print('Connected to second database and read ${snapshot.value}');
+    });;
   }
 
   @override
