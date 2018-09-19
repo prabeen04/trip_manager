@@ -19,7 +19,7 @@ class MembersScreenState extends State<MembersScreen> {
 
   fetchData() async {
     var memberService = new MemberService();
-    memberService.fetchMembers().whenComplete((snapshot){
+    memberService.fetchMembers().then((snapshot){
       print(snapshot);
     });
   }
